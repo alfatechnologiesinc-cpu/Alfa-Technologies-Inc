@@ -22,5 +22,5 @@ export const company = {
   clientCount: 38,
   clientCountLabel: "35+",
   verticalCount: 8,
-  siteUrl: "https://www.alfatechnologies.in",
+  siteUrl: "https://alfatechnologiesinc.in",
 } as const;
