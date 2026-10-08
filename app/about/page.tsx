@@ -1,9 +1,11 @@
+import Image from "next/image";
 import { CheckCircle2, ShieldCheck, Truck, Users } from "lucide-react";
 import { Hero } from "@/components/sections/Hero";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { PartnerBadgeStrip } from "@/components/ui/PartnerBadgeStrip";
 import { company } from "@/lib/content/company";
+import { leadership } from "@/lib/content/team";
 import { pageMetadata } from "@/lib/seo/metadata";
 
 export const metadata = pageMetadata({
@@ -59,28 +61,56 @@ export default function AboutPage() {
             />
             <div className="rounded-2xl border border-surface-100 bg-surface-50 p-6 md:p-8">
               <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-                Point of Contact
+                Our Team
               </p>
-              <div className="mt-4 flex items-center gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-navy font-display text-lg font-bold text-white">
-                  JK
-                </div>
-                <div>
-                  <p className="font-display text-lg font-semibold text-navy">
-                    {company.contactPerson}
-                  </p>
-                  <p className="text-sm text-ink-600">Client Onboarding</p>
-                </div>
-              </div>
-              <p className="mt-5 text-sm leading-relaxed text-ink-600">
+              <p className="mt-4 text-sm leading-relaxed text-ink-600">
                 With a profound understanding of the evolving tech landscape,
-                our core team brings deep technical and operational
-                experience in architecting information system solutions for
-                the most complex requirements of our customers —
-                committing highly skilled, certified, and productive
-                engineering resources to every account.
+                our core team brings deep technical and operational experience
+                in architecting information system solutions for the most
+                complex requirements of our customers — committing highly
+                skilled, certified, and productive engineering resources to
+                every account.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-20 md:pb-28">
+        <div className="mx-auto max-w-7xl px-6 md:px-8">
+          <SectionHeading
+            eyebrow="Leadership"
+            title="The People Behind Alfa"
+            align="center"
+          />
+          <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
+            {leadership.map((leader) => (
+              <article
+                key={leader.name}
+                className="overflow-hidden rounded-2xl border border-surface-100 bg-white shadow-sm shadow-navy/[0.03]"
+              >
+                <Image
+                  src={leader.photo}
+                  alt={`${leader.name}, ${leader.title} of ${company.legalName}`}
+                  width={800}
+                  height={1000}
+                  className="aspect-[4/5] w-full object-cover object-top"
+                />
+                <div className="p-6 md:p-8">
+                  <h3 className="font-display text-xl font-semibold text-navy">
+                    {leader.name}
+                  </h3>
+                  <p className="text-sm font-semibold text-accent">
+                    {leader.title}
+                  </p>
+                  <div className="mt-4 space-y-3 text-sm leading-relaxed text-ink-600">
+                    {leader.bio.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

@@ -34,7 +34,7 @@ export function MobileNav({
             className="flex h-full flex-col px-6 pt-6 pb-10"
           >
             <div className="flex items-center justify-between">
-              <Wordmark variant="light" />
+              <Wordmark variant="light" imageClassName="h-16" />
               <button
                 type="button"
                 onClick={onClose}

@@ -53,8 +53,16 @@ export function Navbar() {
             : "bg-transparent"
         )}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-8">
-          <Wordmark variant="light" />
+        <div
+          className={clsx(
+            "mx-auto flex max-w-7xl items-center justify-between px-6 transition-all duration-300 md:px-8",
+            scrolled ? "py-3" : "py-4"
+          )}
+        >
+          <Wordmark
+            variant="light"
+            imageClassName={scrolled ? "h-12 md:h-16" : "h-16 md:h-24"}
+          />
 
           <nav className="hidden items-center gap-1 md:flex">
             {navLinks.map((link) => {

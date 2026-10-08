@@ -4,6 +4,7 @@ export const company = {
   tagline: "30 Years of Powering IT Infrastructure Across Hyderabad & Secunderabad",
   shortTagline: "Enterprise IT hardware, networking & support since 1996",
   contactPerson: "Jayanth Kunde",
+  ownerTitle: "Founder & Proprietor",
   phone: "+91 9246152636",
   phoneHref: "tel:+919246152636",
   phoneDisplay: "+91 92461 52636",

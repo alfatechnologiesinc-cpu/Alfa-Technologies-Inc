@@ -11,7 +11,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 md:px-8">
         <div className="grid gap-12 md:grid-cols-[1.3fr_1fr_1.2fr]">
           <div>
-            <Wordmark variant="light" />
+            <Wordmark variant="light" imageClassName="h-24 md:h-28" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
               {company.shortTagline}. Trusted by institutions across
               Hyderabad &amp; Secunderabad for {company.yearsExperience}
